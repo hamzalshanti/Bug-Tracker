@@ -1,4 +1,4 @@
-const { Router } = require('express');
+const { Router } = require("express");
 const router = Router();
 
 const {
@@ -8,26 +8,26 @@ const {
   getAllComments,
   getComment,
   createComment,
-} = require('../controllers/issueControllers');
+} = require("../controllers/issueControllers");
 
-const { issueValidation, commentValidation } = require('../utils/validation');
+const { issueValidation, commentValidation } = require("../utils/validation");
 
-// Get all issues
-router.get('/', getAllIssues);
+// Get all issues Test Working
+router.get("/", getAllIssues);
 
 // Get issue by id
-router.get('/:id', getIssue);
+router.get("/:id", getIssue);
 
 // Create issue
-router.post('/', issueValidation, createIssue);
+router.post("/", issueValidation, createIssue);
 
 // Get comments related with issue
-router.get('/:id/comments', getAllComments);
+router.get("/:id/comments", getAllComments);
 
 // Get spesific comments related with issue
-router.get('/:issueId/comments/:commentId', getComment);
+router.get("/:issueId/comments/:commentId", getComment);
 
 // Create comment
-router.post('/:id/comments', commentValidation, createComment);
+router.post("/:id/comments", commentValidation, createComment);
 
 module.exports = router;
