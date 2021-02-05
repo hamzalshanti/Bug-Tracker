@@ -1,6 +1,4 @@
-FROM node:latest
-
-RUN mkdir -p /usr/src/app
+FROM node:12
 
 WORKDIR /usr/src/app
 
